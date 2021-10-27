@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Article-it : By Authors</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark justify-content-between">
+    <div class="container-fluid">
+      <a href="\" class="navbar-brand navbar-title" style="color: #57CC99;">Article-it</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="\">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\new_post">Create</a>
+          </li>
+        </ul>
+
+        <form class="form-inline" method="post" action="\author_search">
+          <input required autocomplete="off" class="form-control mr-sm-2 search-box" type="search" placeholder="Search by Author" aria-label="Search" name="author_name">
+          <button class="btn btn-turquoise my-2 my-sm-0 search-box" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="jumbotron page-type">
+      <h4 class="display-4">Articles by {{author}}</h4>
+    </div>
+    <div class="container">
+      {% for art in articles %}
+      <div class="article-block">
+        <div class="article-title">
+          <h2>{{art.title}}</h2>
+        </div>
+        <p class="article-authors">
+          Written By:
+          {% for ath in art.authors %}
+          <a href="\article_by\{{ath['name']}}">{{ath['name']}}</a>
+          {% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </p>
+        <div class="article-content">
+          {{art['content']}}
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+</body>
+
+</html>

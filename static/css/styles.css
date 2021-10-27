@@ -1,0 +1,102 @@
+/* Navbar */
+.navbar {
+  padding: 20px 40px;
+}
+
+.navbar-title {
+  font-size: 2.5rem;
+}
+
+.nav-item {
+  padding: 0 3px;
+  font-size: 1.2rem;
+}
+
+ .navbar-nav {
+   padding: 12px;
+ }
+
+/* Page Details */
+.jumbotron {
+  margin: 30px 100px;
+  padding: 1rem 2rem;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+}
+
+/* Main Article */
+.article-block {
+  padding: 20px 30px;
+}
+
+.search-box {
+  border-radius: 20px;
+}
+
+a {
+  color: #F54748;
+}
+
+
+/* New post */
+.new-post-button {
+  border-radius: 30px;
+  width: 150px;
+  padding: 7px;
+  font-size: 1.3rem;
+  float: right;
+  margin-left: 20px;
+}
+
+.post-button-big {
+  width: 200px;
+  border-radius: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Custom Button Colors */
+.btn-turquoise {
+    color: #fff;
+    background-color: #39A388;
+    border-color: #39A388; /*set the color you want here*/
+}
+.btn-turquoise:hover, .btn-turquoise:focus, .btn-turquoise:active, .btn-turquoise.active, .open>.dropdown-toggle.btn-turquoise {
+    color: #fff;
+    background-color: #57CC99;
+    border-color: #57CC99; /*set the color you want here*/
+}
+
+.btn-red {
+    color: #fff;
+    background-color: #F54748;
+    border-color: #F54748; /*set the color you want here*/
+}
+.btn-red:hover, .btn-red:focus, .btn-red:active, .btn-red.active, .open>.dropdown-toggle.btn-red {
+    color: #fff;
+    background-color: #FF5151;
+    border-color: #FF5151; /*set the color you want here*/
+}
